@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <!-- <div id="myDiv">div입니다!</div>
+    <div id="myDiv">div입니다!</div>
+    <div id="myDiv">div입니다!</div>
+    <div id="myDiv">div입니다!</div>
+    <div id="myDiv">div입니다!</div> -->
+
+    점심 식단
+    <article id="container">
+        <ul>
+            <li>탕수육</li>
+            <li class="item-second">유산슬</li>
+            <li>짜장면</li>
+        </ul>
+    </article>
+
+    저녁 식단
+    <article>
+        <ul>
+            <li>된장국</li>
+            <li class="item-second">김치찌게</li>
+            <li>해장국</li>
+        </ul>
+    </article>
+
+    <button class="blue">Make me blue!</button>
+    <script>
+        // (기본) 찾아서 저장하고 사용한다.
+        // id로 접근하는 방법
+        // console.log(document.getElementById('myDiv'));
+        // const myDiv = document.getElementById('myDiv');
+
+        // 태그로 접근하는 방법
+        // console.log(document.getElementsByTabName('div'));
+
+        // // 클래스로 접근하는 방법(id에서 class로 바꿔줘야 합니다!)
+        // console.log(document.getElementByClassName('myDiv'));
+
+        // 배운 문법을 바탕으로 HTML 요소들 중 첫번째 item-second 클래스와 첫번째 li를 콘솔로 출력보세요 :)
+        // 탐색을 document부터 시작할 필요는 없습니다.
+        const container = document.getElementById("container");
+        console.log(container.getElementsByClassName("item-second")[0]);
+        console.log(container.getElementsByTagName("li")[0]);
+
+        // 위의 세 줄 안쓰고 아래 52번 줄 써도 됩니다.
+        console.log(document.querySelector("li"));
+
+        // keydown keyup click을 가장 많이 씁니다.
+        const myBnt = document.querySelector("button");
+
+        myBtn.addEventListener('click', function () {
+            // blue라는 클래스의 속성 값을 지정할 수 있습니다.
+            // myBtn.classList.add("blue");
+
+            // myBtn.classList.remove("blue"); // 클래스를 제거합니다.
+            myBtn.classList.toggle("blue"); // (중요) 클래스를 토글합니다. 없으면 넣어주고, 있으면 제거합니다.
+            console.log(myBtn.classList.contains("blue")); // 해당하는 클래스가 있는지 확입니다. 블루 클래스가 있으면 true를 반환, 없으면 false를 반환
+        })
+
+        const obj = {
+            0: "value",
+            1: "value",
+            2: "value",
+            3: "value",
+            4: "value",
+        }
+
+
+        
+    </script>
+</body>
+</html>
