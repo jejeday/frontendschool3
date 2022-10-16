@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수의 타입</title>
+</head>
+<body>
+    <script>
+        console.log(typeof "hello world"); // string // (v)
+        console.log(typeof 100); // number // (v)
+        console.log(typeof NaN); // number
+        console.log(typeof true); // boolean // (v)
+        console.log(typeof undefined); // undefined // (v)
+        console.log(typeof Symbol()); // Symbol
+        console.log(typeof null); // object // 여기서부터 JS가 어려워집니다.
+        console.log(typeof []); // object // 왜 array가 아닐까요?
+        console.log(typeof {}); // object
+        console.log(typeof function(){}); // function
+        console.log(typeof /정규표현식/gi); // object
+
+
+        console.log("-----");
+
+        console.log(10 + 10);
+        console.log("10" + 10);
+        console.log("10" + "10")
+        console.log(10 + "10");
+    </script>
+</body>
+</html>
