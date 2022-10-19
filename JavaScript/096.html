@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        const txts = document.querySelectorAll("p");
+        const btns = document.querySelectorAll("button");
+
+        // for (const item of txts) {
+        //     item.addEventListener("click", () => {
+        //         alert(event.target.textContent.slice(0, -2));
+        //     })
+        // }
+        
+        // IE는 nodelist에 forEach문 작성 불가
+        // txts.forEach(item => {
+        //     item.addEvenetListener("click", () => {
+        //         alert(event.target.textContent.slice(0, -2));
+        //     })
+        // })
+
+        // IE 대응 forEach문 코드 리팩토링
+        Araay.prototype.forEach.call(txts, (item) => {
+            item.addEventListener("click", () => {
+                alert(event.target.textContent.slice(0, -2));
+            })
+        })
+
+        for (const item of btns) {
+            item.addEventListener("click", (event) => {
+                const result = confirm("삭제 하시겠습니까?");
+                // 버블링 차단
+                event.stopPropagation();
+                if (result){
+                    item.parentElement.remove();
+                }
+            })
+        }
+
+    </script>
+</body>
+</html>
