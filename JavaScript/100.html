@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        const me = {
+            name : 'je',
+            address : '경기도',
+            phoneNum : '010-2345-9876',
+            canBuy : function(){
+                console.log('je가 티켓을 구매한다.');
+            },
+            clickGrape : function(speed){
+                speed.faster();
+            }
+        }
+
+        const speed = {
+            skill : 1,
+            faster : function(){
+                this. skill++;
+            }
+        }
+
+        me.clickGrape(speed);
+
+        // 피드백: 이름이 혼란스럽다!
+
+        // 실습: 음식 이름의 배열을 전달하면 배열안에서 랜덤하게 메뉴를 뽑아내는 로봇객체의 생성자를 만들어보세요.
+        function Factory(){}
+        let robot1 = new Factory();
+
+        function NewFactory(food){
+            this.food = food;
+            this.outputFood = function(){
+                console.log(`지금. 나올. 음식은. ${this.food}. 입니다.`)
+            }
+
+            
+            .forEach(item => {
+                console.log(item);
+            })
+        }
+    </script>
+</body>
+</html>

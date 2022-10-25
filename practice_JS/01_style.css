@@ -32,3 +32,22 @@
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
 }
+
+/* 가상클래스 valid. input에 입력받은 값이 유효하다면을 의미합니다. */
+#mainForm input:valid {
+    background-color: sandybrown;
+}
+
+#mainForm button {
+    float: right;
+    padding: 10px;
+    margin-left: 10px;
+    background-color: #F8C4B4;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+}
+
+#mainForm progress {
+    width: 100%;
+}
