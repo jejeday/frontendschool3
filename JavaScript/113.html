@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .target {
+            width: 50px;
+            height: 50px;
+            background-color: royalblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="target"></div>
+
+    <script>
+        const target = document.querySelector('.target');
+        let pos = 0;
+
+        // 사용자가 누르는 키의 상태를 저장하는 객체
+        let keys = {};
+        // ArrowLeft: true;
+
+        function move(event) {
+            keys[event.key] = true;
+        }
+
+        function stop(event) {
+            keys[event.key] = false;
+        }
+
+        document.addEventListener("keydown", move);
+        document.addEventListener("keyup", stop);
+
+        function play() {
+            if (keys.ArrowRight) {
+                pos += 2;
+                target.style.transform = `translateX(${pos}px)`;
+            }
+
+            if (keys.ArrowLeft) {
+                pos -= 2;
+                target.style.transform = `translateX(${pos}px)`;
+            }
+
+            window.requestAnimationFrame(play);
+            // 게임에서 많이 활용되는 코드입니다. (콜백지옥이지만, 다른 탭으로 넘어가면 멈춥니다. 다시 돌아오면 이어서 진행)
+            // function play() {
+            //     console.log("play!");
+    
+            //     window.requestAnimationFrame(play);
+            // }
+        }
+
+        windonw.requestAnimationFrame(play);
+
+    </script>
+</body>
+</html>
