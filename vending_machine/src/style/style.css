@@ -1,3 +1,208 @@
 @charset 'utf-8';
 
-/* 유틸리티 분위기 */
+/* 유틸리티 스타일 */
+.ir {
+    position: absolute;
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.img-item {
+    display: block;
+}
+
+/* 레이아웃 */
+body {
+    background-color: #EAE8FE;
+}
+
+#app {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0 28px;
+    padding-top: 247px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+}
+
+/* <h1 class="tit-app"> 안에 <img src="Logo_img.png">: ColaCola 로고이미지 */
+#app .tit-app {
+    position: absolute;
+    width: 386px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#app .vending-machine,
+#app .my-info {
+    /* flex-basis: flex item의 width */
+    flex-basis: 360px;
+}
+
+/* Logo_img.png */
+#app .tit-app .img-item {
+    width: 100%;
+}
+
+/* 자판기 스타일 */
+#app .vending-machine {
+    /* 상 좌우 하 */
+    padding: 31px 27px 28px;
+    background-color: #fff;
+}
+
+/* <ul class="list-item" */
+.vending-machine .list-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+}
+
+.vending-machine .list-item li {
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+
+.vending-machine .list-item li.sold-out::before {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    border-radius: 10px;
+    /* 단일 이미지, 중앙 배치 및 크기 조절 */
+    background: no-repeat center/60px 46px url(..images/Sold-out.png) rgba(0, 0, 0, 0.8);
+}
+
+.vending-machine .list-item li.sold-out {
+    pointer-events: none;
+}
+
+/* <li>의 자식 <button class="btn-item"> */
+.vending-machine .btn-item {
+    width: 100%;
+    padding: 11px 12px 9px;
+}
+
+.vending-machine .btn-item:active {
+    border-radius: 10px;
+    outline: 3px solid #6327FE;
+}
+
+/* <ul class="list-item">의 자식 <li>의 자식 <button>의 자식 <img class="img-item">: 콜라 이미지 */
+.vending-machine .list-item .img-item {
+    width: 36px;
+    height: 65px;
+    margin: 0 auto;
+}
+
+/* <img>와 형제 <strong class="tit-item">: 콜라 이름 */
+.vending-machine .tit-item {
+    display: block;
+    margin: 6px 0 7px;
+    font-size: 9px;
+}
+
+/* <img>, <strong>와 형제 <span class="txt-price">: 콜라 가격 */
+.vending-machine .txt-price {
+    display: block;
+    padding: 5px 15px;
+    font-size: 12px;
+    background-color: #6327FE;
+    border-radius: 50px;
+    color: #fff;
+}
+
+/* 잔액, 입금, 획득 스타일 */
+.vending-machine .cont-buy {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.cont-buy .info-balnace,
+.cont-buy .inp-put,
+.cont-buy .ost-item-staged {
+    grid-column: 1/3;
+    border-radius: 5px;
+}
+
+.cont-buy .btn-return,
+.cont-buy .btn-put,
+.cont-buy .btn-get {
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+    font-size: 13px;
+}
+
+.cont-buy .info-balance {
+    padding: 6px 10px;
+    background-color: #EAE8FE;
+}
+
+.cont-buy .info-balance .txt-balance {
+    float: right;
+}
+
+.cont-buy .inp-put {
+    padding: 6px;
+    border: 1px solid #BDBDBD;
+}
+
+.list-item-staged {
+    height: 106px;
+    padding: 12px;
+    overflow-y: scroll;
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+}
+
+.list-item-staged li {
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.list-item-staged li+li {
+    margin-top :6px;
+}
+
+.list-item-staged .img-item,
+.list-item-staged .txt-item {
+    float: left;
+}
+
+.list-item-staged .btn-staged {
+    width: 100%;
+    padding: 8px;
+}
+
+.list-item-staged .txt-item {
+    margin-left: 10px;
+    line-height: 32px;
+    font-size: 9px;
+}
+
+.list-item-staged .num-counter {
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+}
+
+.list-item-staged .img-item {
+    width: 18px;
+    height: 32px;
+}
