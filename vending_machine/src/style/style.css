@@ -131,7 +131,7 @@ body {
 
 .cont-buy .info-balnace,
 .cont-buy .inp-put,
-.cont-buy .ost-item-staged {
+.cont-buy .list-item-staged {
     grid-column: 1/3;
     border-radius: 5px;
 }
@@ -149,6 +149,7 @@ body {
     background-color: #EAE8FE;
 }
 
+/* <span class="txt-balance">원</sapn> */
 .cont-buy .info-balance .txt-balance {
     float: right;
 }
@@ -158,6 +159,7 @@ body {
     border: 1px solid #BDBDBD;
 }
 
+/* <ul class="list-item-staged"> */
 .list-item-staged {
     height: 106px;
     padding: 12px;
@@ -180,6 +182,7 @@ body {
     float: left;
 }
 
+/* <ul>의 자식 <li>의 자식 <button class="btn-staged"> */
 .list-item-staged .btn-staged {
     width: 100%;
     padding: 8px;
@@ -205,4 +208,50 @@ body {
 .list-item-staged .img-item {
     width: 18px;
     height: 32px;
+}
+
+/* 나의 정보 스타일 */
+.my-info .cont-mymoney {
+    padding: 9px 27px;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+.my-info .info-mymoney {
+    padding: 6px 10px;
+    background-color: #EAE8FE;
+    border-radius: 5px;
+    line-height: 20px;
+}
+
+/* <span class="txt-mymoney"> */
+.info-mymoney .txt-money {
+    float: right;
+    font-weight: 700;
+}
+
+.my-info .cont-myitems {
+    padding: 25px 27px 26px;
+    background-color: #fff;
+}
+
+/* <strong class="tit-myitem>획득한 음료</strong> */
+.cont-myitems .tit-myitem {
+    display: block;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 13px;
+    line-height: 20px;
+}
+
+.my-info .list-item-staged {
+    height: 364px;
+}
+
+.my-info .txt-total {
+    display: block;
+    text-align: right;
+    margin-top: 6px;
+    font-size: 12px;
+    line-height: 17px;
 }
