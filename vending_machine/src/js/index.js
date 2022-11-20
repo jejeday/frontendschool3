@@ -1,6 +1,7 @@
 import ColaGenerator from "./components/colaGenerator.js";
 import Vendingmachine from "./components/vendingmachine.js";
 
+// 생성자 함수는 대문자로 시작
 const colaGenerator = new ColaGenerator();
 const vendingmachine = new Vendingmachine();
 
